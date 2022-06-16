@@ -26,8 +26,25 @@ function calculaTotal(evt) {
     let resultadoTotal = (pRefrigerante* qtdRefrigerante)+ (pMacarrao* qtdMacarrao)+ (pErvilha*qtdErvilha)+ (pArroz*qtdArroz)+(pFeijao*qtdFeijao)+(pVinho*qtdVinho)
 
     
-    criarVariavel(resultadoTotal,(pVinho*qtdVinho) )
-}
+
+   
+        if ((qtdMacarrao >=0) && (qtdMacarrao <=999)&& (qtdRefrigerante >=0 && qtdRefrigerante<=999) &&(qtdErvilha >=0 && qtdErvilha <=999)&& (qtdArroz >=0 && qtdArroz <=999)&& (qtdFeijao >=0 && qtdFeijao<=999)&& (qtdVinho >=0 && qtdVinho<=999)){
+        
+        
+        criarVariavel(resultadoTotal,(pVinho*qtdVinho) )
+        }
+        
+        else {
+          
+         let  modal=  document.getElementById("modal")
+         modal.style.display="flex"
+         setTimeout(()=> {
+            modal.style.display="none"
+         },3000)
+        }
+        }
+
+
 
 
 function criarVariavel (compraFinal,resultadoVinho){

@@ -117,3 +117,25 @@ button:hover{
     border: 2px solid #ffffff9e;
     color: #000000;
 }
+#modal{
+    position: fixed;
+    display: none;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2000;
+    background-color: #00000080;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+#modal > div {
+    width: 500px;
+    height: 100px;
+    background-color: white;
+    color: #000000;
+    font-size: 1.6rem;
+    padding: 40px;
+    
+}
