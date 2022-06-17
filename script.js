@@ -31,7 +31,7 @@ function calculaTotal(evt) {
         if ((qtdMacarrao >=0) && (qtdMacarrao <=999)&& (qtdRefrigerante >=0 && qtdRefrigerante<=999) &&(qtdErvilha >=0 && qtdErvilha <=999)&& (qtdArroz >=0 && qtdArroz <=999)&& (qtdFeijao >=0 && qtdFeijao<=999)&& (qtdVinho >=0 && qtdVinho<=999)){
         
         
-        criarVariavel(resultadoTotal,(pVinho*qtdVinho) )
+        criarVariavel((resultadoTotal),(pVinho*qtdVinho))
         }
         
         else {
@@ -52,7 +52,8 @@ function criarVariavel (compraFinal,resultadoVinho){
     let amigo= document.getElementById("amigo")
     let totalSpan= document.getElementById("compraFinal")
     
-    if  (( compraFinal% 2)== 0){
+    if  ( (compraFinal.toFixed(2)*100)% 2== 0){
+        console.log (compraFinal.toFixed(2)*100)
         const pagarEu= (compraFinal - resultadoVinho)/2
        
         eu.innerText= `Devo pagar ${pagarEu.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} `
@@ -66,6 +67,7 @@ function criarVariavel (compraFinal,resultadoVinho){
     
     else{
         const pagarEu= compraFinal/2
+        console.log (`else ${compraFinal.toFixed(2)*100}`)
         eu.innerText= `Devo pagar ${pagarEu.toLocaleString("pt-br",{style:"currency", currency:"BRL" })} `
         amigo.innerText=`Meu amigo deve pagar ${(compraFinal-pagarEu).toLocaleString("pt-br",{style:"currency", currency:"BRL" })}`
 
